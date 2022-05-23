@@ -1,0 +1,13 @@
+<!-- <div class="originalImage">
+    <h3> Selected image</h3>
+    <img src="{{ url_for('static', filename = 'images/') }}{{ inputImage }}" alt="{{inputImage}}" id="showSimilarInPopup">
+  </div> -->
+
+  <div class="galleryContent">
+    <!-- <h3> Similar images</h3> -->
+    {% for imageName in images %}
+      <div class="item">
+        <img id="popupImage{{loop.index}}" onclick="imageClicked(this.id)" src="{{ url_for('static', filename = 'images/') }}{{ imageName }}" alt="{{imageName}}" id="showSimilarInPopup">
+      </div>
+    {% endfor %}
+  </div>
